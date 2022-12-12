@@ -7,7 +7,176 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+nav {
+  padding: 0 1rem;
+}
+
+/* bottom footer location */
+.content {
+min-height: calc(100vh - 70px - 64px);
+padding: 1.5rem 0;
+}
+
+/* .container {
+  height: 70px;
+} */
+
+/* main content */
+.items {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 1rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+   flex-grow: 1;
+}
+
+.card .card-action:last-child {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.btn {
+  background-color: #48d12e;
+}
+
+
+.cart {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.5rem;
+  height: 30px;
+
+  cursor: pointer;
+  z-index: 5;
+}
+
+@media (min-width : 767px) {
+  .cart {
+    position: fixed;
+    top: 1.4rem;
+    right: 1.5rem;
+  }
+}
+
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  width: 40rem;
+  max-width: 95%;
+
+  animation: show 500ms ease-in-out;
+}
+
+.collection .collection-item.active {
+  background-color: #48d12e;
+}
+
+.basket-close {
+  cursor: pointer;
+  position: absolute;
+  top: 0.7rem;
+  right: 0.8rem;
+}
+
+.basket-delete {
+  cursor: pointer;
+  color: black;
+}
+
+.totalPriceStyle{
+  justify-content: space-between;
+}
+
+.totalPrice {
+    position: fixed;
+    left: 68%;
+    bottom: 1%;
+    color: black;
+    font-weight: 500;
+
+  
+    
+}
+@media (max-width : 767px) {
+  .totalPrice {
+    position: fixed;
+    left: 52%;
+}
+}
+
+@keyframes show {
+  from {
+    top: 0%;
+    left: 100%;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+.quantityBtn {
+  cursor: pointer;
+  position: flex;
+  vertical-align: middle;
+}
+
+#toast-container {
+  top: 3rem !important;
+  right: 1rem;
+  animation: fade-in 250ms ease-in-out;
+}
+@media (max-width : 767px) {
+  #toast-container {
+    top: 50% !important;
+    left: 0.5rem
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+.scroll {
+  position: fixed;
+  bottom: 2%;
+  right: 1rem;
+  cursor: pointer;
+}
+@media (max-width : 767px) {
+  .scroll {
+    position: fixed;
+    bottom: 1%;
+    left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.isScrollShown {
+  opacity: 1;
 }
